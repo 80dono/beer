@@ -6,9 +6,6 @@
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12"
-    },
-    "ghcr.io/devcontainers/features/jupyter:1": {
-      "extensions": ["ms-toolsai.jupyter"]
     }
   },
   "customizations": {
@@ -22,10 +19,6 @@
       ]
     }
   },
-  "mounts": [
-    "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
-  ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
-  }
+  "mounts": [],
+  "remoteEnv": {}
 }
