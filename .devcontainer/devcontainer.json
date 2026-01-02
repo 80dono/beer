@@ -29,6 +29,10 @@
       ]
     }
   },
-  "mounts": [],
-  "remoteEnv": {}
+  "containerEnv": {
+    "SERVICE_ACCT_CREDS": "/secrets/service-account.json"
+  },
+  "mounts": [
+    "source=${localEnv:BEER_KEY_PATH},target=/secrets/service-account.json,type=bind"
+  ]
 }
