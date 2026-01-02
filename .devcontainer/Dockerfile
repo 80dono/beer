@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12-bookworm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 # Install Python packages
 RUN pip install --upgrade pip && pip install \
     jupyterlab \
+    # jupyter \
     pandas \
     numpy \
     matplotlib \
