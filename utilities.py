@@ -25,14 +25,19 @@ def load_beer_data() -> pd.DataFrame:
     
     # Data cleaning
     df = data.copy()
+    df = df.replace("", pd.NA)
     df["ABV"] = df["ABV"].apply(lambda x: float(x.strip('%'))/100)
+    
+    # Break Style into primary and sub-components
+    # Use parentheses to denote the part to be returned by str.extract()
+    df["main_style"] = df["Style"].str.extract(r"^([^\(]+)", expand=False).str.strip()
     # Might want to make sub_style be "{sub_style} {style}" instead of just "{sub_style}"
-    df["sub_style"] = (df["Style"]
-                       .apply(lambda x: re.findall(r"(?<=\()[\D\s]+(?=\)$)", x))
-                       .apply(lambda x: x[0] if x else pd.NA))
+    df["sub_style"] = df["Style"].str.extract(r"\(([\D\s]+)\)$", expand=False)
+    print(df)
      
     return df
 
-   
+
+# For testing
 if __name__ == "__main__":
     load_beer_data()
