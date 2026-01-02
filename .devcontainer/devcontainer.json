@@ -16,7 +16,16 @@
       },
       "extensions": [
         "ms-python.python",
-        "ms-toolsai.jupyter"
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "njpwerner.autodocstring",
+        "ms-azuretools.vscode-containers",
+        "usernamehw.errorlens",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-python.debugpy",
+        "ms-python.vscode-python-envs",
+        "kevinrose.vsc-python-indent"
       ]
     }
   },
