@@ -7,12 +7,15 @@ RUN apt-get update && apt-get install -y \
     git \
     && apt-get clean
 
+# Copy requirements.txt into the image
+COPY ../requirements.txt /tmp/requirements.txt
+
 # Install Python packages
-RUN pip install --upgrade pip && pip install \
-    jupyterlab \
+RUN pip install --upgrade pip && pip install --no-cache-dir -r /tmp/requirements.txt
+    # jupyterlab \
     # jupyter \
-    pandas \
-    numpy \
-    matplotlib \
-    seaborn \
-    plotly
+    # pandas \
+    # numpy \
+    # matplotlib \
+    # seaborn \
+    # plotly
