@@ -1,4 +1,6 @@
 jupyterlab
+ipykernel
+openpyxl
 numpy>=2.3.1
 pandas
 gspread
