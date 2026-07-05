@@ -9,6 +9,7 @@ seaborn
 plotly
 statsmodels
 scikit-learn
+ruff
 
 # Google client library
 gspread
